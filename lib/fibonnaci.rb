@@ -13,5 +13,11 @@ def fibs(length)
 end
 
 def fibs_rec(length)
-
+  if length == 1
+    [0]
+  elsif length == 2
+    fibs_rec(1) << 1
+  else
+    fibs_rec(length - 1) << ( fibs_rec(length - 1)[-1] + fibs_rec(length - 2)[-1] )
+  end
 end
